@@ -36,5 +36,59 @@
 - svg can used ith <img> or linking with css background-image: url(./my-image.svg); 
 - ilining to display content but slows html due to extra code being written.
 
+## Tables ##
+
+<table>
+  <tr>
+    <th>First Header</th>
+    <th>Second Header</th>
+  </tr>
+  <tr>
+    <td>This is a data cell</td>
+    <td>This is also a data cell!</td>
+  </tr>
+</table>
+
+- td is to enter data in table.
+- th is to make headings.
+- tr is to separate rows/create rows.
+- use colspan="" to make th use specicifed number of columns.
+- use rowspan="" to make th use specified number of rows.
+- <colgroup>
+    <col>
+    <col style="">
+  </colgroup>
+ 
+ to style just the second column, or if style is to applied on both column just use one col and span="2".
+
+- <caption> just below <table> to give table a caption.
+- thead for headings, tbody for body, tfoot for last row.
+- scope: row for row heading,col for col heading,colgroup and colspan for main heading,rowgroup and rowspan
+
+<thead>
+  <tr>
+    <th id="clothes" colspan="3">Clothes</th>
+  </tr>
+  <tr>
+    <th id="trousers" headers="clothes">Trousers</th>
+    <th id="skirts" headers="clothes">Skirts</th>
+    <th id="dresses" headers="clothes">Dresses</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <th id="belgium" rowspan="3">Belgium</th>
+    <th id="antwerp" headers="belgium">Antwerp</th>
+    <td headers="antwerp belgium clothes trousers">56</td>
+    <td headers="antwerp belgium clothes skirts">22</td>
+    <td headers="antwerp belgium clothes dresses">43</td>
+  </tr>
+</tbody>
+
+
+
+
+
+
 
 
