@@ -1,0 +1,15 @@
+## EMMET ##
+- ! followed by ENTER gives HTML boilerplate.
+- alt + a for wrapping 
+- alt + b for removing selected tags.
+- tag.classname to create tag with class.
+- tag#idname to create tag with id.
+- can create multiple ids and classed on one tag.
+- button[type=button] crete button with button type.
+- div>h1>p to create nested elements.
+- ul>li*3 to create 3 li.
+- $ adds numbers incrementally. so li-$ will have 1,2,3 as numbers.
+- > add child so to add sibling use + along with brackets :)).
+- { } to add text content. h1 {hello world}.
+
+
