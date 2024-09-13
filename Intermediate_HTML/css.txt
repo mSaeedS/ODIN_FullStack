@@ -1,0 +1,70 @@
+## UNITS ##
+
+Absolute Units: Always same, doesn't changes like px,in,cm
+Relative Units: Changes based on their conext like em, rem
+
+em changes related to parent element
+rem changes related to root HTML element
+
+## TEXT STYLES ##
+
+-Using Stacks to find font-family installed on pc like:
+body {
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+-One popular and easy method to get fonts that are not installed on a user’s device is to use an online font library.
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+or at the top of css file:
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+or download the font from web and
+
+@font-face {
+  font-family: my-cool-font;
+  src: url(../fonts/the-font-file.woff);
+}
+
+h1 {
+  font-family: my-cool-font, sans-serif;
+}
+
+font-style: italics;
+letter-spacing: for space between letters
+line-height: for space between lines
+text-transform: for applying property to full text
+/* offset-x | offset-y | blur-radius | color */
+text-shadow: 1px 1px 2px black;
+
+ellipses:
+.overflowing {
+  white-space: nowrap; forces text to be on single line
+  overflow: hidden; if text bigger than boundary then it will not be displayed
+  text-overflow: ellipsis; replaces hidden text with '...'
+}
+
+## MORE CSS PROPERTIES ##
+
+-background
+
+background-attachment
+background-clip
+background-color
+background-image
+background-origin
+background-position
+background-repeat
+background-size
+
+-border and border-radius
+
+-box-shadow
+
+-opacity and overflow
+
+
