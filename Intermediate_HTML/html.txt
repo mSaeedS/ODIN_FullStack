@@ -85,6 +85,146 @@
   </tr>
 </tbody>
 
+## FORMS ##
+-forms deals with the input user deals in the page.
+-action attribute of form sends data to an url i.e usually backennd.
+-method attribute tells browser which HTTP request method is to be used i.e GET and POST.
+-GET is to get data from server. POST is to send data to server.
+
+<form action="example.com/path" method="post">
+
+</form>
+
+
+-Form control elements: text box, dropdown, checkboxes and button.
+
+<form action="example.com/path" method="post">
+  <label for="first_name">First Name:</label>
+  <input type="text" id="first_name" placeholder="Saeed..">
+</form>
+-input element requires type.
+-text input accept any text input.
+-label is basically Enter Email: input
+-to for main jo defined id hogi us per label lag jayega.
+-placeholder give exmaple of an input to user.
+
+<label for="first_name">First Name:</label>
+<input type="text" id="first_name" name="first_name">
+
+-name is used to add label in backend storage
+-in backend it looks like this:
+"form": {
+    
+    "first_name": "John"
+    
+  },
+
+
+-email type only accepts valid emails
+-password type makes text hidden
+-number accepts only number
+-date types acceps dates.
+
+-for big texts like user reviews and comments we use textarea.
+<textarea rows="20" cols="60"></textarea>
+
+-Selection dropdown menu:
+<select name="fashion">
+  <optgroup label="Clothing">
+    <option value="t_shirt" selected>T-Shirts</option>
+    <option value="sweater">Sweaters</option>
+    <option value="coats">Coats</option>
+  </optgroup>
+  <optgroup label="Foot Wear">
+    <option value="sneakers">Sneakers</option>
+    <option value="boots">Boots</option>
+    <option value="sandals">Sandals</option>
+  </optgroup>
+</select>
+-we use selected for default option.  
+
+
+-rADIO: Selecting one option at a time:
+<h1>Ticket Type</h1>
+<div>
+  <input type="radio" id="child" name="ticket_type" value="child">
+  <label for="child">Child</label>
+</div>
+
+<div>
+  <input type="radio" id="adult" name="ticket_type" value="adult" checked>
+  <label for="adult">Adult</label>
+</div>
+
+<div>
+  <input type="radio" id="senior" name="ticket_type" value="senior">
+  <label for="senior">Senior</label>
+</div>
+-use checked for deault option
+-use type as checkbox to select multiple options at a time
+
+-Buttons type:
+submit is default type when form is submitted
+reset type resets form into original state
+
+
+-The fieldset element is a container element that allows us to group related form
+<fieldset>
+  <legend>Contact Details</legend>
+
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name">
+
+  <label for="phone_number">Phone Number:</label>
+  <input type="tel" id="phone_number" name="phone_number">
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email">
+</fieldset>
+
+-legend is like label for fieldset
+
+-required validation
+<input type="password" id="user_password" name="user_password" required>
+
+-minimum length:
+<textarea placeholder="What's happening?" minlength="3"></textarea>
+-similary maxlength for maximum length
+
+-min/max value limitation:
+<input type="number" id="quantity" name="quantity" min="1" value="0">
+
+-styling valid or invalid output using css:
+input:invalid {
+  border-color: red;
+}
+
+input:valid {
+  border-color: green;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
