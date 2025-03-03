@@ -69,3 +69,60 @@ function Person(name) {
 -set player protoype of person so it shares the function of person 
 
 -- Factory Functions and the Module Pattern --
+
+##Factory Functions: They are like constructors but are not initialised using new. They create and return new object and don't ave prototypes.
+
+const User = function (name) {
+  this.name = name;
+  this.discordName = "@" + name;
+}
+// hey, this is a constructor - 
+// then this can be refactored into a factory!
+
+function createUser (name) {
+  const discordName = "@" + name;
+  return { name, discordName };
+}
+// and that's very similar, except since it's just a function,
+// we don't need a new keyword
+
+
+-private variables: are defined in facory fucntions when you don't return them in closures. for e.g reputation here is private.
+function createUser (name) {
+  const discordName = "@" + name;
+
+  let reputation = 0;
+  const getReputation = () => reputation;
+  const giveReputation = () => reputation++;
+
+  return { name, discordName, getReputation, giveReputation };
+}
+
+const josh = createUser("josh");
+josh.giveReputation();
+josh.giveReputation();
+
+console.log({
+  discordName: josh.discordName,
+  reputation: josh.getReputation()
+});
+// logs { discordName: "@josh", reputation: 2 }
+
+## Prototypal inheritance with factories
+function createPlayer (name, level) {
+  const user = createUser(name);
+
+  const increaseLevel = () => level++;
+  return Object.assign({}, user, { increaseLevel });
+}
+
+##IIFE
+-Sometimes, we don’t need a factory function to create multiple objects—we just want to group related code while keeping some variables private. This is done using an Immediately Invoked Function Expression (IIFE), which runs immediately after being defined.
+const calculator = (function () {
+  const add = (a, b) => a + b;
+  const sub = (a, b) => a - b;
+  const mul = (a, b) => a * b;
+  const div = (a, b) => a / b;
+  return { add, sub, mul, div };
+})();
+Now, we can use calculator.add(3,5) but can’t access add directly—it’s private inside the module.
